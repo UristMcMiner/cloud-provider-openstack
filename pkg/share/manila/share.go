@@ -111,10 +111,11 @@ func buildCreateRequest(volOptions *controller.VolumeOptions, shareOptions *shar
 	}
 
 	return &shares.CreateOpts{
-		ShareProto: shareOptions.Protocol,
-		Size:       storageSize,
-		Name:       shareOptions.ShareName,
-		ShareType:  shareOptions.Type,
+		ShareProto:     shareOptions.Protocol,
+		Size:           storageSize,
+		Name:           shareOptions.ShareName,
+		ShareType:      shareOptions.Type,
+		ShareNetworkID: shareOptions.ShareNetwork,
 		Metadata: map[string]string{
 			persistentvolume.CloudVolumeCreatedForClaimNamespaceTag: volOptions.PVC.Namespace,
 			persistentvolume.CloudVolumeCreatedForClaimNameTag:      volOptions.PVC.Name,

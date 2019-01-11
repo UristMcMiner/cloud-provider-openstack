@@ -18,10 +18,11 @@ package shareoptions
 
 // CommonOptions contains options common for any backend/protocol
 type CommonOptions struct {
-	Zones    string `name:"zones" value:"default=nova"`
-	Type     string `name:"type" value:"default=default"`
-	Protocol string `name:"protocol"`
-	Backend  string `name:"backend"`
+	Zones        string `name:"zones" value:"default=nova"`
+	Type         string `name:"type" value:"default=default"`
+	Protocol     string `name:"protocol"`
+	Backend      string `name:"backend"`
+	ShareNetwork string `name:"share-network-id" value:"default=sn-standalone"`
 
 	OSSecretName         string `name:"osSecretName"`
 	OSSecretNamespace    string `name:"osSecretNamespace" value:"default=default"`
